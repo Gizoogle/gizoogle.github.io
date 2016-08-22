@@ -123,7 +123,7 @@ longreplacements = {
 	"\\byou're all\\b": "y-aw",
 };
 
-ernouns = [ 'brotha', 'cracka', 'crazy ass nigga', 'nigga', 'playa', 'killa', 'pimp', 'rappa', 'drug deala', 'pusha', 'shot calla', 'gangsta', 'drug deala',
+ernouns = [ 'brotha', 'cracka', 'crazy ass nigga', 'nigga', 'playa', 'killa', 'pimp', 'rappa', 'pusha', 'shot calla', 'gangsta', 'drug deala',
 			'hustla', 'wanna be gangsta', 'bitch', 'motherfucka', 'baller', 'poser'
 ];
 
@@ -330,19 +330,19 @@ if (window.location.href.indexOf("google.com") != -1)
 	var GoogleLogo = document.getElementById("hplogo");
 if (GoogleLogo != null){
 	var logo1 = document.createElement("img");
-		logo1.src = "https://googledrive.com/host/0B2OdkxOGeE9sd3VwWDNTUUZnTGc/gizoogle_a.gif";
+		logo1.src = "https://67.media.tumblr.com/583908b61ed0bcf8df8432106e25bf21/tumblr_ocby4qyd8g1stc7yso1_250.gif";
 		logo1.align = "absmiddle";
 		logo1.setAttribute("style", "padding-top:112px");
 	var logo2 = document.createElement("img");
-		logo2.src = "https://googledrive.com/host/0B2OdkxOGeE9sd3VwWDNTUUZnTGc/spinners2.gif";
+		logo2.src = "https://67.media.tumblr.com/f2b81da5342dde65fe5d909e49d178d2/tumblr_ocby4qyd8g1stc7yso3_75sq.gif";
 		logo2.align = "absmiddle";
 		logo2.setAttribute("style", "padding-top:112px");
 	var logo3 = document.createElement("img");
-		logo3.src = "https://googledrive.com/host/0B2OdkxOGeE9sd3VwWDNTUUZnTGc/spinners2.gif";
+		logo3.src = "https://67.media.tumblr.com/f2b81da5342dde65fe5d909e49d178d2/tumblr_ocby4qyd8g1stc7yso3_75sq.gif";
 		logo3.align = "absmiddle";
 		logo3.setAttribute("style", "padding-top:112px");
 	var logo4 = document.createElement("img");
-		logo4.src = "https://googledrive.com/host/0B2OdkxOGeE9sd3VwWDNTUUZnTGc/gizoogle_b.gif";
+		logo4.src = "https://66.media.tumblr.com/86835dd1c428eeb6266aafef467db053/tumblr_ocby4qyd8g1stc7yso2_250.gif";
 		logo4.align = "absmiddle";
 		logo4.setAttribute("style", "padding-top:112px");
 
