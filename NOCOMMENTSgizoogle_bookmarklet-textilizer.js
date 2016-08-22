@@ -261,7 +261,7 @@ new_endings = [
 	' #YaDigg !' ,
 	
 	'. Holler at tha boss dogg.' ,
-
+	'. Living young n wild n free !' ,
 	'. Put your feet up n take a breath !' ,
 	'. Smells like tha good shit.' ,
 	'. Snoop du jour !' ,
