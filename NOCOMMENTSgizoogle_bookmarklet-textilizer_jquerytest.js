@@ -956,16 +956,6 @@ if (ssplit[i][j].search(/\.|\!|\?|\:|\;/) != -1 && foundexception[i][j]!=1 && en
 
 /********************************* JQUERY TEST STUFF CONTINUES HERE *****************************/
 
-//original textnodes (unchanged)
-textnodes = document.evaluate(
-    "//*[not(self::script or self::style or self::code)]/text()",
-    document,
-    null,
-    XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-    null);
-
-dothing();
-
 //repace original textnodes with textnodes of iframes by looping through each iframe
 for (var n=0; n<$alliframes.length; n++)
 {
@@ -977,8 +967,19 @@ textnodes = $alliframes[n].contentWindow.document.evaluate(
 		null);
 
 dothing();
-
 }
+
+//original textnodes (unchanged)
+textnodes = document.evaluate(
+    "//*[not(self::script or self::style or self::code)]/text()",
+    document,
+    null,
+    XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+    null);
+
+dothing();
+
+
 
 /********************************* JQUERY TEST STUFF ENDS AGAIN HERE *****************************/
 
