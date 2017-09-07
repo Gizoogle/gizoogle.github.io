@@ -448,8 +448,7 @@ textnodes = $alliframes.contents().each(function(){
     null,
     XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
     null)
-	})
-	.add(textnodes);
+	});
 	
 //textnodes is replaced with textnodes including all those of iframes and should be ready
 
