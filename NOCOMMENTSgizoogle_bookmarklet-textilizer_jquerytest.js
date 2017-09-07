@@ -967,9 +967,9 @@ textnodes = document.evaluate(
 dothing();
 
 //repace original textnodes with textnodes of iframes by looping through each iframe
-for (var n=0; n<$alliframes.contents().length; n++)
+for (var n=0; n<$alliframes.length; n++)
 {
-textnodes = $alliframes.contents()[n].contentDocument.document.evaluate(
+textnodes = $alliframes[n].contentDocument.document.evaluate(
 		"//*[not(self::script or self::style or self::code)]/text()",
 		document,
 		null,
