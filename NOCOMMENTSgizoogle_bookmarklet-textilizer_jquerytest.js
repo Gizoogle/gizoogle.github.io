@@ -426,7 +426,7 @@ function getAllOfElem(selector, $root, $collection) {
     // Loop through all frames
     $root.find('iframe,frame').each(function() {
         // Recursively call the function, setting "$root" to the frame's document
-        getElem(selector, $(this).contents(), $collection);
+        getAllOfElem(selector, $(this).contents(), $collection);
     });
     return $collection;
 }
