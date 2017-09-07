@@ -441,15 +441,24 @@ textnodes = document.evaluate(
     null);
 
 //repace original textnodes with textnodes added to textnodes of iframes
-textnodes = $alliframes.contents().each(function(){
-	document.evaluate(
+
+textnodes = document.evaluate(
     "//*[not(self::script or self::style or self::code)]/text()",
     document,
     null,
     XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
     null)
-	});
-	
+	.add(
+		$alliframes.contents().each(function(){
+		document.evaluate(
+		"//*[not(self::script or self::style or self::code)]/text()",
+		document,
+		null,
+		XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+		null)
+		})
+	);
+
 //textnodes is replaced with textnodes including all those of iframes and should be ready
 
 /********************************* JQUERY TEST STUFF ENDS HERE *****************************/
