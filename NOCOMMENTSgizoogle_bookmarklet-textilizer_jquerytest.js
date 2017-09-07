@@ -433,29 +433,9 @@ function getAllOfElem(selector, $root, $collection) {
 $alliframes = getAllOfElem('iframe');
 $alliframes = $(document).add($alliframes);
 
-//original textnodes (unchanged)
-textnodes = document.evaluate(
-    "//*[not(self::script or self::style or self::code)]/text()",
-    document,
-    null,
-    XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-    null);
+/********************************* JQUERY TEST STUFF ENDS HERE, MORE AFTER function dothing() *****************************/
 
-//repace original textnodes with textnodes added to textnodes of iframes
-
-textnodes = $alliframes.contents().each(function(){
-		document.evaluate(
-		"//*[not(self::script or self::style or self::code)]/text()",
-		document,
-		null,
-		XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
-		null)
-		});
-
-//textnodes is replaced with textnodes including all those of iframes and should be ready
-
-/********************************* JQUERY TEST STUFF ENDS HERE *****************************/
-
+function dothing() {
 for (var i = 0; i < textnodes.snapshotLength; i++) {
 	
 	node = textnodes.snapshotItem(i);
@@ -972,6 +952,35 @@ if (ssplit[i][j].search(/\.|\!|\?|\:|\;/) != -1 && foundexception[i][j]!=1 && en
 	node.data = s;
 
 }
+}
+
+/********************************* JQUERY TEST STUFF CONTINUES HERE *****************************/
+
+//original textnodes (unchanged)
+textnodes = document.evaluate(
+    "//*[not(self::script or self::style or self::code)]/text()",
+    document,
+    null,
+    XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+    null);
+
+dothing();
+
+//repace original textnodes with textnodes of iframes by looping through each iframe
+for (var n=0; n<$alliframes.contents().length; n++)
+{
+textnodes = $alliframes.contents()[n].document.evaluate(
+		"//*[not(self::script or self::style or self::code)]/text()",
+		document,
+		null,
+		XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE,
+		null);
+
+dothing();
+
+}
+
+/********************************* JQUERY TEST STUFF ENDS AGAIN HERE *****************************/
 
 }
 Transizlate();
