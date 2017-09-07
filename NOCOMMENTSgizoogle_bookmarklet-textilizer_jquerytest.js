@@ -431,7 +431,7 @@ function getAllOfElem(selector, $root, $collection) {
     return $collection;
 }
 $alliframes = getAllOfElem('iframe');
-$alliframes = $(document).add($alliframes);
+//$alliframes = $(document).add($alliframes);
 
 /********************************* JQUERY TEST STUFF ENDS HERE, MORE AFTER function dothing() *****************************/
 
