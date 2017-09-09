@@ -371,7 +371,7 @@ if (GoogleLogo != null){
 	logo1.parentNode.appendChild(logo2);
 	logo2.parentNode.appendChild(logo3);
 	logo3.parentNode.appendChild(logo4);
-	logo4.parentNode.appendChild(logo5);
+	if (useclassic != 1) logo4.parentNode.appendChild(logo5);
 	GoogleLogo.parentNode.removeChild(GoogleLogo);
 }
 }
