@@ -329,22 +329,30 @@ if (window.location.href.indexOf("google.com") != -1)
 	var GoogleLogo = document.getElementById("hplogo");
 if (GoogleLogo != null){
 	var logo1 = document.createElement("img");
-		logo1.src = "https://67.media.tumblr.com/583908b61ed0bcf8df8432106e25bf21/tumblr_ocby4qyd8g1stc7yso1_250.gif";
+		logo1.src = "https://raw.githubusercontent.com/Gizoogle/gizoogle.github.io/master/gizoogle_a.gif";
 		logo1.align = "absmiddle";
-		logo1.setAttribute("style", "padding-top:112px");
+		if (window.location.href.indexOf("images") == -1) logo1.setAttribute("style", "padding-top:109px");
 	var logo2 = document.createElement("img");
-		logo2.src = "https://67.media.tumblr.com/f2b81da5342dde65fe5d909e49d178d2/tumblr_ocby4qyd8g1stc7yso3_75sq.gif";
+		logo2.src = "https://raw.githubusercontent.com/Gizoogle/gizoogle.github.io/master/spinners2.gif";
 		logo2.align = "absmiddle";
-		logo2.setAttribute("style", "padding-top:112px");
+		if (window.location.href.indexOf("images") == -1) logo2.setAttribute("style", "padding-top:109px");
 	var logo3 = document.createElement("img");
-		logo3.src = "https://67.media.tumblr.com/f2b81da5342dde65fe5d909e49d178d2/tumblr_ocby4qyd8g1stc7yso3_75sq.gif";
+		logo3.src = "https://raw.githubusercontent.com/Gizoogle/gizoogle.github.io/master/spinners2.gif";
 		logo3.align = "absmiddle";
-		logo3.setAttribute("style", "padding-top:112px");
+		if (window.location.href.indexOf("images") == -1) logo3.setAttribute("style", "padding-top:109px");
 	var logo4 = document.createElement("img");
-		logo4.src = "https://66.media.tumblr.com/86835dd1c428eeb6266aafef467db053/tumblr_ocby4qyd8g1stc7yso2_250.gif";
+		logo4.src = "https://raw.githubusercontent.com/Gizoogle/gizoogle.github.io/master/gizoogle_b.gif";
 		logo4.align = "absmiddle";
-		logo4.setAttribute("style", "padding-top:112px");
+		if (window.location.href.indexOf("images") == -1) logo4.setAttribute("style", "padding-top:109px");
+	if (useclassic != 1)
+	{
+	var logo5 = document.createElement("img");
+		logo5.src = "https://raw.githubusercontent.com/Gizoogle/gizoogle.github.io/master/gizoogle_c.gif";
+		logo5.align = "absmiddle";
+		if (window.location.href.indexOf("images") == -1) logo5.setAttribute("style", "padding-top:109px");
+	}
 
+	/*
 	searchbar = document.getElementsByName("q");
 	searchbar[0].oninput = function()
 		{
@@ -354,13 +362,16 @@ if (GoogleLogo != null){
 			logo2.setAttribute("style", "visibility:hidden");
 			logo3.setAttribute("style", "visibility:hidden");
 			logo4.setAttribute("style", "visibility:hidden");
+			if (useclassic != 1) logo5.setAttribute("style", "visibility:hidden");
 			}
 		}
+	*/
 	
 	GoogleLogo.parentNode.appendChild(logo1);
 	logo1.parentNode.appendChild(logo2);
 	logo2.parentNode.appendChild(logo3);
 	logo3.parentNode.appendChild(logo4);
+	logo4.parentNode.appendChild(logo5);
 	GoogleLogo.parentNode.removeChild(GoogleLogo);
 }
 }
@@ -717,26 +728,16 @@ if ( randomnumonesyll in onesyllcheck && foundexception[i][j] != 1 && changed[i]
 	switch (iziznizzy)
 	{
 	case 0:
-			if (firstletter[i][j] == 0 && !(ssplit[i][j].charAt(firstletter[i][j]) in vowels))
+			if (!(ssplit[i][j].charAt(firstletter[i][j]) in vowels))
+			{
+			newword = ssplit[i][j].toString().substr(0,firstletter[i][j]+1) + "izzy";
+				if (lastletter[i][j] != ssplit[i][j].toString().length-1)
 				{
-				newword = ssplit[i][j].toString().charAt(firstletter[i][j]) + "izzy";
-					if (lastletter[i][j] != ssplit[i][j].toString().length-1)
-					{
-					newword = newword + ssplit[i][j].toString().substr(lastletter[i][j]+1);
-					}
-				if (ssplit[i][j].toUpperCase() == ssplit[i][j]) ssplit[i][j] = newword.toUpperCase();	else	ssplit[i][j] = newword;
-				changed[i][j] = 1;
+				newword = newword + ssplit[i][j].toString().substr(lastletter[i][j]+1);
 				}
-			else
-				{
-				newword = ssplit[i][j].toString().substr(0,firstletter[i][j]+1) + "izzy";
-					if (lastletter[i][j] != ssplit[i][j].toString().length-1)
-					{
-					newword = newword + ssplit[i][j].toString().substr(lastletter[i][j]+1);
-					}
-				if (ssplit[i][j].toUpperCase() == ssplit[i][j]) ssplit[i][j] = newword.toUpperCase();	else	ssplit[i][j] = newword;
-				changed[i][j] = 1;
-				}
+			if (ssplit[i][j].toUpperCase() == ssplit[i][j]) ssplit[i][j] = newword.toUpperCase();	else	ssplit[i][j] = newword;
+			changed[i][j] = 1;
+			}
 			break;
 	case 1:
 			if (!(ssplit[i][j].charAt(firstletter[i][j]) in vowels))
@@ -773,9 +774,9 @@ if ( randomnumonesyll in onesyllcheck && foundexception[i][j] != 1 && changed[i]
 	case 4:
 			if (!(ssplit[i][j].charAt(firstletter[i][j]) in vowels))
 			{
-				newword = ssplit[i][j].toString().substr(0, vowelfoundat[i][j][1]) + "izz" + ssplit[i][j].toString().substr(vowelfoundat[i][j][1]);
-				if (ssplit[i][j].toUpperCase() == ssplit[i][j]) ssplit[i][j] = newword.toUpperCase();	else	ssplit[i][j] = newword;
-				changed[i][j] = 1;
+			newword = ssplit[i][j].toString().substr(0, vowelfoundat[i][j][1]) + "izz" + ssplit[i][j].toString().substr(vowelfoundat[i][j][1]);
+			if (ssplit[i][j].toUpperCase() == ssplit[i][j]) ssplit[i][j] = newword.toUpperCase();	else	ssplit[i][j] = newword;
+			changed[i][j] = 1;
 			}
 			break;
 	}
@@ -881,7 +882,8 @@ else
 	{
 		if (numofvowels[i][j]>=2)
 		{
-			var numsyllables=Math.floor(Math.random() * (numofvowels[i][j] - Math.round(numofvowels[i][j]/2) + 1)) + Math.round(numofvowels[i][j]/2);
+			if (numofvowels[i][j]==2 && ssplit[i][j].charAt(firstletter[i][j]) in vowels) var numsyllables=2;
+			else var numsyllables=Math.floor(Math.random() * (numofvowels[i][j] - Math.round(numofvowels[i][j]/2) + 1)) + Math.round(numofvowels[i][j]/2);
 			newword = ssplit[i][j].toString().substr(0, vowelfoundat[i][j][numsyllables]) + "izzle";
 				if (ssplit[i][j].charAt(lastletter[i][j]) == "s")
 				{
